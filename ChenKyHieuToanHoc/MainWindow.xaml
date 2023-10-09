@@ -1,0 +1,181 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="724.333" Width="1001.334">
+    <Window.Resources>
+        <Style x:Key="MyComboxItems" TargetType="ComboBoxItem">
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ComboBoxItem">
+                        <Border Name="border" BorderThickness="1" BorderBrush="#FF30E2A1" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Opacity" Value="0.8" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+    </Window.Resources>
+    
+
+    <Grid RenderTransformOrigin="0.5,0.5" Height="683" VerticalAlignment="Top" HorizontalAlignment="Right" Width="1171" Margin="0,10,-184,0">
+
+        <GroupBox  Margin="0,0,197,544" Background="White" BorderBrush="#FF30E2A1" BorderThickness="3,3,3,3" ClipToBounds="True">
+            <StackPanel>
+                <Button x:Name= "btn_ktuDB" ToolTip="Chèn ký tự đặc biệt" ToolTipService.ShowDuration="5000" Content=" Chèn ký tự đặc biệt " HorizontalAlignment="Left" Margin="758,24,0,0" VerticalAlignment="Top" Width="190" Height="43" FontWeight="Bold" BorderBrush="#FFACACAC" Background="#FF18D9D3" BorderThickness="0,0,0,0" ClipToBounds="True" Click="btn_ktuDB_Click" />
+                <ComboBox x:Name="cbb_KyHieutoanhoc" ToolTip="Chèn kí hiệu toán học"  ToolTipService.ShowDuration="5000" Width="199" Height="42" Background="#FFE5F6F5" AutomationProperties.HelpText="Chèn kí hiệu" BorderThickness="0,0,0,0" ClipToBounds="True" Margin="0,-43,238,0" MaxDropDownHeight="239" HorizontalAlignment="Right" SelectionChanged="cbb_KyHieutoanhoc_SelectionChanged" >
+
+
+
+
+                    <ComboBoxItem Content="Diện tích hình tròn" FontWeight="Bold" IsEnabled="False" />
+                    <ComboBoxItem Content="A = {\pi}{r^2}" FontWeight="Bold" FontSize="0.01" Width="229" Height="35" Style="{StaticResource MyComboxItems}"    >
+                        <ComboBoxItem.Background>
+                            <ImageBrush ImageSource="imgs/dientichhinhtron.jpg"/>
+                        </ComboBoxItem.Background>
+                    </ComboBoxItem>
+
+                    <ComboBoxItem Content="Định lý nhị thức" FontWeight="Bold" IsEnabled="False"/>
+                    <ComboBoxItem  Content="(x+a)^n =\sum_{k=0}^{n}\binom{n}{k} x^ka^{n-k}" FontWeight="Bold" FontSize="0.01" Width="229" Height="35" Style="{StaticResource MyComboxItems}" >
+                        <ComboBoxItem.Background>
+                            <ImageBrush ImageSource="imgs/dinhlynhithuc.jpg"/>
+                        </ComboBoxItem.Background>
+                    </ComboBoxItem>
+
+
+                    <ComboBoxItem Content="Khai triển tổng" FontWeight="Bold" IsEnabled="False"/>
+                    <ComboBoxItem  Content="(1+x)^n = 1 + \frac{nx}{1!} + \frac{n(n-1)x^2}{2!} + \cdots" FontWeight="Bold" FontSize="0.01" Width="229" Height="35" Style="{StaticResource MyComboxItems}"  >
+                        <ComboBoxItem.Background>
+                            <ImageBrush ImageSource="imgs/khaitriensum.jpg"/>
+                        </ComboBoxItem.Background>
+                    </ComboBoxItem>
+
+                    <ComboBoxItem Content="Mở rộng Taylorr" FontWeight="Bold" IsEnabled="False"/>
+                    <ComboBoxItem  Content="e^x = 1 + \frac{x}{1!} + \frac{x^2}{2!} + \frac{x^3}{3!}+ \cdots , -\infty \lt x \lt \infty" FontWeight="Bold" FontSize="0.01" Width="229" Height="35" Style="{StaticResource MyComboxItems}" >
+                        <ComboBoxItem.Background>
+                            <ImageBrush ImageSource="imgs/morongTaylor.jpg"/>
+                        </ComboBoxItem.Background>
+                    </ComboBoxItem>
+
+
+                    <ComboBoxItem Content="Công thức sin cos" FontWeight="Bold" IsEnabled="False"/>
+                    <ComboBoxItem  Content="\sin\alpha \pm \sin\beta = 2 \sin \frac{1}{2}(\alpha \pm \beta)\cos\frac{1}{2}(\alpha \pm \beta)" FontWeight="Bold" FontSize="0.01" Width="229" Height="35" Style="{StaticResource MyComboxItems}" >
+                        <ComboBoxItem.Background>
+                            <ImageBrush ImageSource="imgs/cosSin.jpg"/>
+                        </ComboBoxItem.Background>
+                    </ComboBoxItem>
+
+                    <ComboBoxItem Content="Hóa Ni Tơ " FontWeight="Bold" IsEnabled="False"/>
+                    <ComboBoxItem  Content="NH_{4}Cl+NaNO_{2}\rightarrow^{t^{o}}N_{2}+NaCl+2H_{2}O" FontWeight="Bold" FontSize="0.01" Width="229" Height="35" Style="{StaticResource MyComboxItems}" >
+                        <ComboBoxItem.Background>
+                            <ImageBrush ImageSource="imgs/dieucheNitoHoahoc.jpg" Stretch="Uniform"/>
+                        </ComboBoxItem.Background>
+                    </ComboBoxItem>
+                    <ComboBoxItem Content="Lực hấp dẫn " FontWeight="Bold" IsEnabled="False"/>
+                    <ComboBoxItem  Content="G\frac{Mm}{( R+h)^2}=m\frac{v^2}{R+h}" FontWeight="Bold" FontSize="0.01" Width="229" Height="35" Style="{StaticResource MyComboxItems}">
+                        <ComboBoxItem.Background>
+                            <ImageBrush ImageSource="imgs/vatlyluchapdan.jpg" Stretch="Uniform"/>
+                        </ComboBoxItem.Background>
+                    </ComboBoxItem>
+
+
+
+
+
+                </ComboBox>
+
+
+                <Label Height="26" Panel.ZIndex="1" Width="132" Visibility="Visible" FontWeight="Bold" Content="Chèn kí hiệu toán học" Margin="0,-43,272,0" HorizontalAlignment="Right"/>
+
+                <Button  x:Name= "btn_Thoat" ToolTip="Thoát chương trình" ToolTipService.ShowDuration="5000" Content="Đăng Xuất" HorizontalAlignment="Left" Margin="39,-43,0,0" VerticalAlignment="Top" Width="86" Height="43" BorderBrush="#FFACACAC" Background="#FFD38315" FontWeight="Bold" Click="btn_Thoat_Click"/>
+
+            </StackPanel>
+        </GroupBox>
+
+
+        <GroupBox x:Name="gb_Kytudacbiet" FontWeight="Bold" Header="Chèn ký tự đặc biệt" Margin="569,227,222,143" Panel.ZIndex="4" Background="#FFE8F2F2" BorderThickness="3,3,3,3" BorderBrush="#FF30E2A1">
+            <ListBox  x:Name="cv_Ktu" Margin="10,10,-2,-13.333" SelectionChanged="cv_Ktu_SelectionChanged_1" >
+
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+
+
+                <Button x:Name="btn_Ktu" Content="\rightarrow" Width="25" Height="25" Canvas.Left="17" Canvas.Top="30"  FontSize="0.01">
+                    <Button.Background>
+                        <ImageBrush ImageSource="imgs/muiten.jpg" Stretch="UniformToFill"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btn_Ktu1" Content="*"  Width="25" Height="25" Canvas.Left="54" Canvas.Top="30" Background="White"  />
+                <Button x:Name="btn_Ktu2" Content="\ne"  Width="25" Height="25" Canvas.Left="92" Canvas.Top="30" FontSize="0.01" >
+                    <Button.Background>
+                        <ImageBrush ImageSource="imgs/daukhac.jpg" Stretch="Uniform"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btn_Ktu3" Content="\infty" Width="25" Height="25" Canvas.Left="128" Canvas.Top="30" FontSize="0.01" FontWeight="Normal"  >
+                    <Button.Background>
+                        <ImageBrush ImageSource="imgs/duongvocung.jpg" Stretch="Uniform"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btn_Ktu4" Content="ⱥ" Width="25" Height="25" Canvas.Left="166" Canvas.Top="30" Background="White"  FontSize="14" />
+                <Button x:Name="btn_Ktu5" Content="©" Width="25" Height="25" Canvas.Left="203" Canvas.Top="30" Background="White" FontSize="16"  />
+                <Button x:Name="btn_Ktu6" Content="←" Width="25" Height="25" Canvas.Left="166" Canvas.Top="71" Background="White" FontSize="16"/>
+                <Button x:Name="btn_Ktu7" Content="↓" Width="25" Height="25" Canvas.Left="128" Canvas.Top="71" Background="White" FontSize="16" />
+
+                <Button Canvas.Left="292" Canvas.Top="252" Height="20" ToolTip="Thoát chèn ký tự"  Width="60" Click="Button_Click_1" >Close</Button>
+                <Label x:Name="Lb_ktuDb2" Canvas.Left="10" Canvas.Top="111" FontWeight="Bold" FontStyle="Italic">Ký tự đặc biệt:</Label>
+
+
+               
+            </ListBox>
+
+        </GroupBox>
+
+
+        <GroupBox x:Name="gb_updateCT" Margin="100,82,298,499" Background="White" BorderBrush="#FF30E2A1" BorderThickness="3,3,3,3" ClipToBounds="True" Width="773">
+            <StackPanel>
+                <Label x:Name="Lb_update" Canvas.Left="12" Canvas.Top="6" FontWeight="Bold" >Sửa kí hiệu toán học</Label>
+                <Button Content="Sửa" HorizontalAlignment="Left" Margin="455,10,0,8" VerticalAlignment="Top" Width="75" Click="Button_Click" Height="20"/>
+                <RichTextBox x:Name="EquationRichTextbox" Margin="12,-29,325.333,11" VerticalAlignment="Center" RenderTransformOrigin="0.343,-0.594" Height="52"/>
+                <Button x:Name="close_gb_updateCT" Content="Đóng " HorizontalAlignment="Left" Margin="681,-87,0,0" VerticalAlignment="Top" Width="66" RenderTransformOrigin="0.444,0.968" Click="close_gb_updateCT_Click" ToolTip="Đóng sửa kí hiệu toán học"   ToolTipService.ShowDuration="4000"/>
+            </StackPanel>
+
+
+
+        </GroupBox>
+        <GroupBox  Margin="0,184,197,10" Background="White" BorderBrush="#FF30E2A1" BorderThickness="3,3,3,3" ClipToBounds="True">
+            <StackPanel>
+
+                <Label x:Name="Lb_content" Canvas.Left="12" Canvas.Top="6" FontWeight="Bold" >Nội dung</Label>
+                <RichTextBox x:Name="formulaRichTextBox" Grid.Row="2" Margin="10,10,-2.667,-10.333" Height="439" MouseLeave="formulaRichTextBox_MouseLeave"/>
+
+            </StackPanel>
+        </GroupBox>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </Grid>
+</Window>
